@@ -19,6 +19,13 @@ sequenceDiagram
     server-->>browser: the css file
     deactivate server
 
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
+    activate server
+    server-->>browser: the JavaScript file
+    deactivate server
+
+    Note right of browser: The browser starts executing the JavaScript code that fetches the JSON from the server
+
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
     activate server
     server-->>browser: the json file
@@ -26,6 +33,8 @@ sequenceDiagram
 
     browser->>server: GET https://studies.cs.helsinki.fi/favicon.ico
     activate server
-    server-->>browser: the html file
+    server-->>browser: [{"content":"","date":"2023-05-31T12:30:34.224Z"}]
     deactivate server
+
+    Note right of browser: The browser executes the callback function that renders the notes
 ```
