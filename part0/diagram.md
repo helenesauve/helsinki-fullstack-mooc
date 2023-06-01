@@ -28,13 +28,15 @@ sequenceDiagram
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
     activate server
-    server-->>browser: the json file
-    deactivate server
-
-    browser->>server: GET https://studies.cs.helsinki.fi/favicon.ico
-    activate server
     server-->>browser: [{"content":"","date":"2023-05-31T12:30:34.224Z"}]
     deactivate server
 
     Note right of browser: The browser executes the callback function that renders the notes
+
+    browser->>server: GET https://studies.cs.helsinki.fi/favicon.ico
+    activate server
+    server-->>browser: HTML document
+    deactivate server
+
+    
 ```
