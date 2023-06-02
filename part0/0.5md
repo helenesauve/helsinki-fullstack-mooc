@@ -10,17 +10,17 @@ sequenceDiagram
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
     activate server
-    server-->>browser: the CSS file
+    server-->>browser: main.css with response 200
     deactivate server
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/spa.js
     activate server
-    server-->>browser: the Javascript file
+    server-->>browser: spa.js with response 200
     deactivate server
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
     activate server
-    server-->>browser: the json file
+    server-->>browser: json file with response 200
     deactivate server
 
     Note right of browser: The browser starts executing the JavaScript code that fetches the JSON from the server
