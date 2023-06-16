@@ -16,6 +16,7 @@ const Part = ({name, exercises}) => {
 }
 
 const Content = ({parts}) => (
+  // mapping over parts to reduce amount of code
 <div>
   {parts.map(({name, exercises}, index) => (
       <Part key={index} name={name} exercises={exercises}/>
@@ -37,6 +38,7 @@ const totalNumber = parts.reduce(
   )
 }
 
+// course and parts are part of one object
 const App = () => {
   const course = {
     name: 'Half Stack application development',
